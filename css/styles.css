@@ -2713,7 +2713,8 @@
 .situations-track--plain{align-items:stretch}
 
 /* ===== Блок «Помощь близким» — на всю ширину, две колонки ===== */
-.dir-relatives-inner{max-width:none;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.dir-relatives{padding-left:40px;padding-right:40px}
+.dir-relatives-inner{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
 .dir-relatives-text p{margin:0 0 28px}
 .dir-relatives-points{display:flex;flex-direction:column;gap:14px}
 .dir-relatives-point{background:#fff;border-radius:16px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
@@ -2731,6 +2732,7 @@
 .dir-quiz-layout .quiz-card{max-width:none;margin-top:0}
 
 @media (max-width:980px){
+  .dir-relatives{padding-left:20px;padding-right:20px}
   .dir-relatives-inner{grid-template-columns:1fr;gap:24px}
   .dir-quiz-layout{grid-template-columns:1fr;gap:20px}
   .dir-quiz-aside{padding:24px}
@@ -2919,3 +2921,11 @@ a.dir-card h3,a.dir-card p{text-decoration:none}
 a.sit-card,a.sit-square{display:flex;text-decoration:none;color:inherit}
 a.sit-square{flex-direction:column}
 a.sit-card h3,a.sit-square h3{text-decoration:none}
+
+/* Плашки, совмещающие роль контейнера .wrap: выравниваем по контентной колонке,
+   иначе их фон выходит за границы контента остальных блоков */
+.price-why,.otz-external{padding-left:40px;padding-right:40px}
+.price-why-inner,.otz-external-inner{max-width:1360px;margin-left:auto;margin-right:auto}
+@media (max-width:980px){
+  .price-why,.otz-external{padding-left:20px;padding-right:20px}
+}
