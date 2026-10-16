@@ -376,7 +376,7 @@
   .sit-link:hover{gap:9px;color:var(--blue-dark)}
   .sit-link svg{width:13px;height:13px;flex-shrink:0}
   .sit-featured-photo{flex:1;position:relative;min-width:0}
-  .sit-featured-photo::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(100deg, #FFF 34.16%, rgba(255, 255, 255, 0.15) 74.33%)}
+  .sit-featured-photo::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,#fff 0%,rgba(255,255,255,.9) 10%,rgba(255,255,255,.58) 26%,rgba(255,255,255,.26) 42%,rgba(255,255,255,.07) 58%,rgba(255,255,255,0) 70%)}
   .sit-featured-photo img{width:100%;height:100%;object-fit:cover}
 
   @media (max-width:980px){
