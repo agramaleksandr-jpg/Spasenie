@@ -2929,3 +2929,10 @@ a.sit-card h3,a.sit-square h3{text-decoration:none}
 @media (max-width:980px){
   .price-why,.otz-external{padding-left:20px;padding-right:20px}
 }
+
+/* Ховер только у карточек, которые действительно кликабельны */
+.trust-card--question:not(a):not(button):not([role="button"]):not([class*="js-"]){cursor:default}
+.trust-card--question:not(a):not(button):not([role="button"]):not([class*="js-"]):hover{transform:none;box-shadow:none}
+.clinic-photo:not([class*="js-"]):not([role="button"]){cursor:default}
+.clinic-photo:not([class*="js-"]):not([role="button"]):hover{transform:none;box-shadow:none}
+.clinic-photo:not([class*="js-"]):not([role="button"]):hover img{transform:none}
