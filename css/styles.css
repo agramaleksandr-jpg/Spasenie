@@ -2960,3 +2960,33 @@ a.sit-card h3,a.sit-square h3{text-decoration:none}
 @media (max-width:980px){
   .tc-side-label{font-size:11px;letter-spacing:.8px;top:20px;bottom:20px}
 }
+
+/* ===== Этапы помощи: раскрывающийся список ===== */
+.svc-stages{--stage-span:4;display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-top:28px;align-items:stretch}
+.svc-stage{grid-column:2;background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease}
+.svc-stage:hover{border-color:#cfd8e8}
+.svc-stage.is-active{grid-column:1;grid-row:1 / span var(--stage-span,4);background:#fff;border-color:var(--border);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.svc-stage-head{width:100%;background:none;border:none;font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:14px;padding:22px 24px;text-align:left}
+.svc-stage.is-active .svc-stage-head{padding-bottom:4px;cursor:default}
+.svc-stage-num{flex-shrink:0;font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.5px}
+.svc-stage-title{flex:1;font-size:var(--fs-h4);font-weight:700;color:var(--ink);line-height:1.3}
+.svc-stage.is-active .svc-stage-title{font-size:var(--fs-h3);font-weight:800}
+.svc-stage-icon{flex-shrink:0;position:relative;width:26px;height:26px;border-radius:50%;background:#eef3fd;transition:background .2s ease}
+.svc-stage-icon::before,.svc-stage-icon::after{content:'';position:absolute;left:50%;top:50%;background:var(--blue);transform:translate(-50%,-50%);transition:opacity .2s ease,transform .25s ease}
+.svc-stage-icon::before{width:11px;height:1.6px}
+.svc-stage-icon::after{width:1.6px;height:11px}
+.svc-stage-head:hover .svc-stage-icon{background:#e2e9f6}
+.svc-stage.is-active .svc-stage-icon{display:none}
+.svc-stage-body{display:none;padding:0 24px 24px}
+.svc-stage.is-active .svc-stage-body{display:block;flex:1}
+.svc-stage-body p{font-size:var(--fs-body);line-height:1.6;color:var(--muted);margin:10px 0 18px}
+.svc-stage-body .svc-checklist{margin-bottom:22px}
+.svc-stage-body .btn{margin-top:auto}
+
+@media (max-width:980px){
+  .svc-stages{grid-template-columns:1fr;gap:12px}
+  .svc-stage,.svc-stage.is-active{grid-column:1;grid-row:auto}
+  .svc-stage-head{padding:18px 20px;gap:12px}
+  .svc-stage.is-active .svc-stage-head{padding-bottom:2px}
+  .svc-stage-body{padding:0 20px 20px}
+}

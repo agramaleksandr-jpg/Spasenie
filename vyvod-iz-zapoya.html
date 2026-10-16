@@ -439,51 +439,97 @@
     </div>
   </section>
 
-  <section class="svc-included">
+    <section class="svc-included">
     <div class="wrap">
       <p class="eyebrow">Состав помощи</p>
       <h2>Что входит в помощь</h2>
-      <p class="price-section-sub">Состав определяет врач. Первый этап раскрыт подробно, остальные — по мере прохождения.</p>
+      <p class="price-section-sub">Состав определяет врач после осмотра. Откройте любой этап, чтобы посмотреть, что в него входит.</p>
 
-      <div class="svc-included-grid">
-        <div class="svc-included-main">
-          <span class="svc-included-step-label">01 · Открытый этап</span>
-          <h3>Осмотр и первичная оценка</h3>
-          <p>Врач уточняет продолжительность употребления, симптомы, хронические заболевания и лекарства, которые пациент принимает постоянно.</p>
-          <ul class="svc-checklist svc-checklist--onlight" style="margin-bottom:20px">
+      <div class="svc-stages" id="svcStages">
+        <article class="svc-stage is-active" data-stage="01">
+          <button type="button" class="svc-stage-head">
+            <span class="svc-stage-num">01</span>
+            <span class="svc-stage-title">Осмотр и первичная оценка</span>
+            <span class="svc-stage-icon" aria-hidden="true"></span>
+          </button>
+          <div class="svc-stage-body">
+            <p>Врач уточняет продолжительность употребления, симптомы, хронические заболевания и лекарства, которые пациент принимает постоянно.</p>
+            <ul class="svc-checklist svc-checklist--onlight">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Измерение основных показателей</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Оценка рисков домашнего формата</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Согласование дальнейших действий</li>
-          </ul>
-          <button type="button" class="btn btn-outline js-scroll-consult">Получить консультацию</button>
-        </div>
+            </ul>
+            <button type="button" class="btn btn-outline js-scroll-consult">Получить консультацию</button>
+          </div>
+        </article>
 
-        <div class="svc-included-tabs">
-          <div class="svc-included-tab">
-            <div class="svc-included-tab-top">
-              <div><span class="svc-included-tab-num">02</span><br><strong>Подбор терапии</strong></div>
-              <span class="svc-included-tab-plus">+</span>
-            </div>
+        <article class="svc-stage" data-stage="02">
+          <button type="button" class="svc-stage-head">
+            <span class="svc-stage-num">02</span>
+            <span class="svc-stage-title">Подбор терапии</span>
+            <span class="svc-stage-icon" aria-hidden="true"></span>
+          </button>
+          <div class="svc-stage-body">
+            <p>На основании осмотра врач определяет состав помощи: что необходимо сейчас, в каком объёме и с какими ограничениями по здоровью. Назначения обсуждаются до начала процедуры.</p>
+            <ul class="svc-checklist svc-checklist--onlight">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Учёт хронических заболеваний и аллергий</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Проверка совместимости с постоянными лекарствами</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Объяснение, что и зачем назначено</li>
+            </ul>
+            <button type="button" class="btn btn-outline js-scroll-consult">Получить консультацию</button>
           </div>
-          <div class="svc-included-tab">
-            <div class="svc-included-tab-top">
-              <div><span class="svc-included-tab-num">03</span><br><strong>Медицинская помощь</strong></div>
-              <span class="svc-included-tab-plus">+</span>
-            </div>
+        </article>
+
+        <article class="svc-stage" data-stage="03">
+          <button type="button" class="svc-stage-head">
+            <span class="svc-stage-num">03</span>
+            <span class="svc-stage-title">Медицинская помощь</span>
+            <span class="svc-stage-icon" aria-hidden="true"></span>
+          </button>
+          <div class="svc-stage-body">
+            <p>Процедура проходит под наблюдением врача. Продолжительность зависит от тяжести состояния — обычно от двух до нескольких часов.</p>
+            <ul class="svc-checklist svc-checklist--onlight">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Восполнение потерь жидкости и электролитов</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Поддержка работы сердца, печени и нервной системы</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Снятие тошноты, тревоги и нарушений сна</li>
+            </ul>
+            <button type="button" class="btn btn-outline js-scroll-consult">Получить консультацию</button>
           </div>
-          <div class="svc-included-tab">
-            <div class="svc-included-tab-top">
-              <div><span class="svc-included-tab-num">04</span><br><strong>Контроль состояния</strong></div>
-              <span class="svc-included-tab-plus">+</span>
-            </div>
+        </article>
+
+        <article class="svc-stage" data-stage="04">
+          <button type="button" class="svc-stage-head">
+            <span class="svc-stage-num">04</span>
+            <span class="svc-stage-title">Контроль состояния</span>
+            <span class="svc-stage-icon" aria-hidden="true"></span>
+          </button>
+          <div class="svc-stage-body">
+            <p>Врач остаётся рядом и отслеживает, как организм отвечает на помощь. При необходимости состав корректируется прямо по ходу.</p>
+            <ul class="svc-checklist svc-checklist--onlight">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Повторное измерение давления и пульса</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Оценка самочувствия до завершения процедуры</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Решение о продолжении помощи или госпитализации</li>
+            </ul>
+            <button type="button" class="btn btn-outline js-scroll-consult">Получить консультацию</button>
           </div>
-          <div class="svc-included-tab">
-            <div class="svc-included-tab-top">
-              <div><span class="svc-included-tab-num">05</span><br><strong>Рекомендации близким</strong></div>
-              <span class="svc-included-tab-plus">+</span>
-            </div>
+        </article>
+
+        <article class="svc-stage" data-stage="05">
+          <button type="button" class="svc-stage-head">
+            <span class="svc-stage-num">05</span>
+            <span class="svc-stage-title">Рекомендации близким</span>
+            <span class="svc-stage-icon" aria-hidden="true"></span>
+          </button>
+          <div class="svc-stage-body">
+            <p>Перед уходом врач объясняет, что делать в ближайшие сутки, на какие признаки обращать внимание и когда нужно обратиться повторно.</p>
+            <ul class="svc-checklist svc-checklist--onlight">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Режим питья, питания и сна на первые сутки</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Признаки, при которых нужно звонить снова</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>Варианты дальнейшего лечения — без давления</li>
+            </ul>
+            <button type="button" class="btn btn-outline js-scroll-consult">Получить консультацию</button>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>

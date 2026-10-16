@@ -1030,3 +1030,25 @@
       });
     });
   }
+
+/* ===== Этапы помощи — переключение активного этапа ===== */
+(function(){
+  var stagesWrap = document.getElementById('svcStages');
+  if (!stagesWrap) return;
+  var stages = Array.prototype.slice.call(stagesWrap.querySelectorAll('.svc-stage'));
+  stages.forEach(function(stage){
+    var head = stage.querySelector('.svc-stage-head');
+    if (!head) return;
+    head.setAttribute('aria-expanded', stage.classList.contains('is-active') ? 'true' : 'false');
+    head.addEventListener('click', function(){
+      if (stage.classList.contains('is-active')) return;
+      stages.forEach(function(s){
+        s.classList.remove('is-active');
+        var h = s.querySelector('.svc-stage-head');
+        if (h) h.setAttribute('aria-expanded', 'false');
+      });
+      stage.classList.add('is-active');
+      head.setAttribute('aria-expanded', 'true');
+    });
+  });
+})();
