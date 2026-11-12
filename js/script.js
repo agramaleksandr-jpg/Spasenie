@@ -90,6 +90,16 @@
         return;
       }
       consultPhone.style.borderColor = '';
+      var consent = document.getElementById('consultConsent');
+      if (consent && !consent.checked) {
+        var wrap = consent.closest('.consult-consent-check');
+        if (wrap) {
+          wrap.classList.add('is-error');
+          setTimeout(function(){ wrap.classList.remove('is-error'); }, 2500);
+        }
+        showToast('Подтвердите согласие на обработку персональных данных');
+        return;
+      }
       showToast('Заявка отправлена — мы скоро свяжемся с вами');
       consultForm.reset();
       document.getElementById('consultMsg').value = '';
@@ -1051,4 +1061,64 @@
       head.setAttribute('aria-expanded', 'true');
     });
   });
+})();
+
+/* ===== Версия для слабовидящих ===== */
+(function(){
+  var panel = document.getElementById('a11yPanel');
+  if (!panel) return;
+  var root = document.documentElement;
+  var KEYS = {font:'a11yFont', theme:'a11yTheme', images:'a11yImages'};
+
+  function store(k, v){ try { localStorage.setItem(KEYS[k], v); } catch(e){} }
+  function restore(k){ try { return localStorage.getItem(KEYS[k]); } catch(e){ return null; } }
+
+  function apply(kind, value){
+    if (kind === 'font') {
+      if (value === 'normal') root.removeAttribute('data-a11y-font');
+      else root.setAttribute('data-a11y-font', value);
+    } else if (kind === 'theme') {
+      if (value === 'normal') root.removeAttribute('data-a11y-theme');
+      else root.setAttribute('data-a11y-theme', value);
+    } else if (kind === 'images') {
+      if (value === 'on') root.removeAttribute('data-a11y-images');
+      else root.setAttribute('data-a11y-images', 'off');
+    }
+    panel.querySelectorAll('[data-a11y="' + kind + '"]').forEach(function(btn){
+      btn.classList.toggle('is-active', btn.dataset.value === value);
+    });
+    store(kind, value);
+  }
+
+  panel.querySelectorAll('.a11y-opt').forEach(function(btn){
+    btn.addEventListener('click', function(){ apply(btn.dataset.a11y, btn.dataset.value); });
+  });
+
+  function openPanel(open){
+    panel.hidden = !open;
+    document.querySelectorAll('.js-a11y-toggle').forEach(function(b){
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    try { localStorage.setItem('a11yPanelOpen', open ? '1' : '0'); } catch(e){}
+  }
+
+  document.querySelectorAll('.js-a11y-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){ openPanel(panel.hidden); });
+  });
+  document.querySelectorAll('.js-a11y-close').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      apply('font','normal'); apply('theme','normal'); apply('images','on');
+      openPanel(false);
+    });
+  });
+
+  // восстановление выбора на других страницах
+  var saved = {font: restore('font'), theme: restore('theme'), images: restore('images')};
+  var any = false;
+  Object.keys(saved).forEach(function(k){
+    if (saved[k]) { apply(k, saved[k]); if (saved[k] !== 'normal' && saved[k] !== 'on') any = true; }
+  });
+  var wasOpen = null;
+  try { wasOpen = localStorage.getItem('a11yPanelOpen'); } catch(e){}
+  if (any || wasOpen === '1') openPanel(true);
 })();
